@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Raquel 18 Anos | 03.10.2026</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: #0A0A0A;
+            color: #E5E5E5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1A1A1A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #9E2A2F;
+            border-radius: 20px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 40px;
+            }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(158, 42, 47, 0.5);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 600px) {
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: #E5E5E5;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .logo {
+                font-size: 1.7rem;
+            }
+        }
+
+        .logo span {
+            color: #9E2A2F;
+            font-weight: 700;
+            font-size: 1.6rem;
+            line-height: 1;
+            display: inline-block;
+        }
+
+        @media (min-width: 768px) {
+            .logo span {
+                font-size: 1.9rem;
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                gap: 36px;
+            }
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #E5E5E5;
+            font-weight: 500;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            padding: 8px 0;
+            display: inline-block;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links a {
+                font-size: 0.9rem;
+            }
+        }
+
+        .nav-links a:active {
+            color: #9E2A2F;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle at 30% 20%, #1A1A1A 0%, #050505 100%);
+            padding: 80px 0 60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .pre-title {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #9E2A2F;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .pre-title {
+                font-size: 0.9rem;
+                letter-spacing: 5px;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 480px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 5.5rem;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .hero-title span {
+            color: #9E2A2F;
+            font-style: italic;
+        }
+
+        .hero-date {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            border-left: 2px solid #9E2A2F;
+            padding-left: 15px;
+            color: #C0C0C0;
+        }
+
+        @media (min-width: 768px) {
+            .hero-date {
+                font-size: 1.2rem;
+                padding-left: 20px;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .countdown-luxury {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media (min-width: 480px) {
+            .countdown-luxury {
+                gap: 20px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .countdown-luxury {
+                gap: 28px;
+                justify-content: flex-start;
+            }
+        }
+
+        .cd-item {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 16px;
+            padding: 12px 18px;
+            min-width: 70px;
+            text-align: center;
+            border: 1px solid rgba(158, 42, 47, 0.5);
+            transition: all 0.3s;
+        }
+
+        @media (min-width: 480px) {
+            .cd-item {
+                padding: 18px 24px;
+                min-width: 90px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .cd-item {
+                padding: 25px 30px;
+                min-width: 120px;
+            }
+        }
+
+        .cd-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            color: #C0C0C0;
+            line-height: 1;
+        }
+
+        @media (min-width: 480px) {
+            .cd-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .cd-number {
+                font-size: 4rem;
+            }
+        }
+
+        .cd-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+            font-weight: 500;
+            color: #9E2A2F;
+        }
+
+        @media (min-width: 768px) {
+            .cd-label {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                margin-top: 12px;
+            }
+        }
+
+        .cta-button {
+            margin-top: 30px;
+            display: inline-block;
+            background: transparent;
+            border: 1.5px solid #9E2A2F;
+            padding: 12px 28px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #E5E5E5;
+            text-decoration: none;
+            transition: 0.4s;
+            font-size: 0.85rem;
+            border-radius: 40px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .cta-button {
+                margin-top: 48px;
+                padding: 14px 38px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .cta-button:active {
+            background: #9E2A2F;
+            color: #0A0A0A;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                padding: 100px 0;
+            }
+        }
+
+        .section-subtitle {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #9E2A2F;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        @media (min-width: 768px) {
+            .section-subtitle {
+                font-size: 0.75rem;
+                letter-spacing: 4px;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #FFFFFF;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3.2rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        .divider {
+            width: 50px;
+            height: 2px;
+            background: #9E2A2F;
+            margin: 20px 0 25px 0;
+        }
+
+        @media (min-width: 768px) {
+            .divider {
+                width: 70px;
+                margin: 25px 0 35px 0;
+            }
+        }
+
+        .confirmation-card {
+            background: #111111;
+            border-radius: 24px;
+            padding: 24px;
+            border: 1px solid rgba(158, 42, 47, 0.3);
+        }
+
+        @media (min-width: 768px) {
+            .confirmation-card {
+                padding: 55px;
+                border-radius: 28px;
+            }
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .input-group label {
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9E2A2F;
+        }
+
+        input, select, textarea {
+            background: #1E1E1E;
+            border: 1px solid #333;
+            padding: 12px 14px;
+            border-radius: 12px;
+            color: #E5E5E5;
+            font-family: 'Inter', sans-serif;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+
+        @media (min-width: 768px) {
+            input, select, textarea {
+                padding: 14px 18px;
+            }
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #9E2A2F;
+        }
+
+        .full-width {
+            grid-column: span 1;
+        }
+
+        @media (min-width: 768px) {
+            .full-width {
+                grid-column: span 2;
+            }
+        }
+
+        .btn-submit {
+            background: #9E2A2F;
+            border: none;
+            padding: 14px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #0A0A0A;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .btn-submit {
+                padding: 16px;
+                font-size: 1rem;
+            }
+        }
+
+        .btn-submit:active {
+            background: #B83E44;
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* ALERTA DRESS CODE COM ANIMAÇÃO */
+        .dress-code-alert {
+            background: linear-gradient(135deg, #9E2A2F 0%, #6B1A1E 100%);
+            border-radius: 20px;
+            padding: 20px 24px;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 25px rgba(158, 42, 47, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: bounceAlert 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @media (min-width: 768px) {
+            .dress-code-alert {
+                border-radius: 28px;
+                padding: 32px 40px;
+                gap: 25px;
+            }
+        }
+
+        @keyframes bounceAlert {
+            0% {
+                transform: scale(0.95) translateY(-20px);
+                opacity: 0;
+            }
+            40% {
+                transform: scale(1.02) translateY(5px);
+            }
+            70% {
+                transform: scale(0.99) translateY(-2px);
+            }
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .dress-code-alert i {
+            font-size: 2rem;
+            color: #FFD700;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+        }
+
+        @media (min-width: 768px) {
+            .dress-code-alert i {
+                font-size: 3.5rem;
+            }
+        }
+
+        .dress-code-alert-content {
+            flex: 1;
+        }
+
+        .dress-code-alert-content strong {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        @media (min-width: 768px) {
+            .dress-code-alert-content strong {
+                font-size: 1.6rem;
+                letter-spacing: 2px;
+                margin-bottom: 8px;
+            }
+        }
+
+        .dress-code-alert-content p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        @media (min-width: 768px) {
+            .dress-code-alert-content p {
+                font-size: 1rem;
+            }
+        }
+
+        .close-alert {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            font-size: 1rem;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .close-alert {
+                font-size: 1.2rem;
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        .close-alert:active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .location-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                margin-top: 30px;
+            }
+        }
+
+        .map-card {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 250px;
+            border: 1px solid #2A2A2A;
+        }
+
+        @media (min-width: 768px) {
+            .map-card {
+                border-radius: 28px;
+                height: 380px;
+            }
+        }
+
+        .info-card {
+            background: #111;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #2A2A2A;
+        }
+
+        @media (min-width: 768px) {
+            .info-card {
+                padding: 32px;
+                border-radius: 28px;
+            }
+        }
+
+        .info-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        @media (min-width: 768px) {
+            .info-row {
+                gap: 20px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .info-icon {
+            color: #9E2A2F;
+            font-size: 1.3rem;
+        }
+
+        @media (min-width: 768px) {
+            .info-icon {
+                font-size: 1.6rem;
+            }
+        }
+
+        .info-text h4 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+        }
+
+        @media (min-width: 768px) {
+            .info-text h4 {
+                margin-bottom: 8px;
+                font-size: 1rem;
+            }
+        }
+
+        .info-text p {
+            font-size: 0.85rem;
+        }
+
+        @media (min-width: 768px) {
+            .info-text p {
+                font-size: 0.95rem;
+            }
+        }
+
+        .gifts-masonry {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        @media (min-width: 480px) {
+            .gifts-masonry {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (min-width: 768px) {
+            .gifts-masonry {
+                gap: 30px;
+                margin-top: 50px;
+            }
+        }
+
+        .gift-card {
+            background: #111;
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid #2A2A2A;
+            transition: all 0.3s;
+        }
+
+        @media (min-width: 768px) {
+            .gift-card {
+                padding: 32px;
+                border-radius: 24px;
+            }
+        }
+
+        .gift-card:active {
+            border-color: #9E2A2F;
+        }
+
+        .gift-icon {
+            font-size: 2rem;
+            color: #9E2A2F;
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .gift-icon {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        .gift-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .gift-title {
+                font-size: 1.4rem;
+                margin-bottom: 12px;
+            }
+        }
+
+        .gift-desc {
+            color: #B0B0B0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .gift-desc {
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+        }
+
+        .gift-link {
+            text-decoration: none;
+            color: #C0C0C0;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: 0.3s;
+            font-size: 0.85rem;
+        }
+
+        @media (min-width: 768px) {
+            .gift-link {
+                gap: 8px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .gift-link:active {
+            color: #9E2A2F;
+            gap: 10px;
+        }
+
+        footer {
+            background: #050505;
+            padding: 40px 0 30px;
+            border-top: 1px solid #1F1F1F;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            footer {
+                padding: 60px 0 40px;
+            }
+        }
+
+        .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: 768px) {
+            .footer-brand {
+                font-size: 1.8rem;
+            }
+        }
+
+        .footer-brand span {
+            color: #9E2A2F;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        @media (min-width: 768px) {
+            .footer-brand span {
+                font-size: 2rem;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        @media (min-width: 768px) {
+            .social-links {
+                gap: 30px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .social-links a {
+            color: #9A9A9A;
+            font-size: 1.3rem;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        @media (min-width: 768px) {
+            .social-links a {
+                font-size: 1.5rem;
+            }
+        }
+
+        .social-links a:active {
+            color: #9E2A2F;
+        }
+
+        .toast-message {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #9E2A2F;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .toast-message {
+                bottom: 30px;
+                left: auto;
+                right: 30px;
+                padding: 15px 25px;
+            }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #0A0A0A;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="logo">ANIVERSÁRIO DA RAQUEL <span>18</span></div>
+            <ul class="nav-links">
+                <li><a href="#hero">INÍCIO</a></li>
+                <li><a href="#location">LOCAL</a></li>
+                <li><a href="#confirmation">CONFIRMAR</a></li>
+                <li><a href="#gifts">PRESENTES</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="pre-title">VOCÊ É O NOSSO CONVIDADO ESPECIAL</div>
+                <h1 class="hero-title">UMA NOITE DE <span>GLAMOUR</span><br>E ELEGÂNCIA</h1>
+                <div class="hero-date">03 de Outubro de 2026 — 19h00<br>Salão Capim & Limão, Rio de Janeiro</div>
+                <div class="countdown-luxury">
+                    <div class="cd-item"><div class="cd-number" id="days">--</div><div class="cd-label">DIAS</div></div>
+                    <div class="cd-item"><div class="cd-number" id="hours">--</div><div class="cd-label">HORAS</div></div>
+                    <div class="cd-item"><div class="cd-number" id="minutes">--</div><div class="cd-label">MINUTOS</div></div>
+                    <div class="cd-item"><div class="cd-number" id="seconds">--</div><div class="cd-label">SEGUNDOS</div></div>
+                </div>
+                <a href="#location" class="cta-button">VER LOCAL</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="location">
+        <div class="container">
+            <span class="section-subtitle">O ENDEREÇO</span>
+            <h2 class="section-title">Salão de Festas Capim & Limão</h2>
+            <div class="divider"></div>
+            <div class="location-grid">
+                <div class="map-card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.2390132278346!2d-43.37131032435418!3d-22.831477735382694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x996244f22c5b9f%3A0x1dd63a8cd842f1ea!2sCascadura%2C%20Rio%20de%20Janeiro%20-%20RJ!5e0!3m2!1spt-BR!2sbr!4v1686773130980!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="info-card">
+                    <div class="info-row"><div class="info-icon"><i class="fas fa-location-dot"></i></div><div class="info-text"><h4>Endereço completo</h4><p>Rua Mendes de Aguiar, 114 - Campinho<br>Rio de Janeiro - RJ, 21310-280</p></div></div>
+                    <div class="info-row"><div class="info-icon"><i class="fas fa-calendar-alt"></i></div><div class="info-text"><h4>Data e horário</h4><p>03 de Outubro de 2026 · 19h às 23h<br>Recepção a partir das 18h30</p></div></div>
+                    <div class="info-row"><div class="info-icon"><i class="fas fa-parking"></i></div><div class="info-text"><h4>Facilidades</h4><p>Estacionamento no local · Acessibilidade · Área para fumantes</p></div></div>
+                    <a href="https://maps.app.goo.gl/2hENhaSZMVTddmZVA" target="_blank" class="cta-button" style="margin-top: 20px; display: inline-block;">VER ROTAS <i class="fas fa-route"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="confirmation">
+        <div class="container">
+            <span class="section-subtitle">RSVP OBRIGATÓRIO</span>
+            <h2 class="section-title">Confirme sua presença</h2>
+            <div class="divider"></div>
+            <div class="confirmation-card">
+                <p style="margin-bottom: 20px; color: #C5C5C5; font-size: 0.9rem;">Por favor, confirme até <strong style="color:#9E2A2F;">20 de setembro de 2026</strong>. Sua resposta é essencial para os preparativos.</p>
+                <form id="presenceForm">
+                    <div class="form-grid">
+                        <div class="input-group"><label>Nome completo *</label><input type="text" id="name" required placeholder="Seu nome completo"></div>
+                        <div class="input-group"><label>E-mail *</label><input type="email" id="email" required placeholder="seu@email.com"></div>
+                        <div class="input-group"><label>Telefone</label><input type="tel" id="phone" placeholder="(00) 00000-0000"></div>
+                        <div class="input-group"><label>Acompanhantes *</label>
+                            <select id="guests" required>
+                                <option value="">Selecione</option>
+                                <option value="Apenas eu">Apenas eu</option>
+                                <option value="Eu + 1 acompanhante">Eu + 1 acompanhante</option>
+                                <option value="Eu + 2 acompanhantes">Eu + 2 acompanhantes</option>
+                                <option value="Eu + 3 acompanhantes">Eu + 3 acompanhantes</option>
+                                <option value="Eu + 4 acompanhantes">Eu + 4 acompanhantes</option>
+                            </select>
+                        </div>
+                        <div class="input-group full-width"><label>Mensagem / Restrições alimentares</label><textarea id="message" rows="3" placeholder="Deixe uma mensagem especial ou informe restrições..."></textarea></div>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">CONFIRMAR PRESENÇA <i class="fas fa-arrow-right"></i></button>
+                </form>
+                <div id="dressCodeAlertContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gifts">
+        <div class="container">
+            <span class="section-subtitle">INSPIRAÇÕES</span>
+            <h2 class="section-title">Sugestões de Presentes</h2>
+            <div class="divider"></div>
+            <p style="max-width: 700px; margin-bottom: 20px; color:#B0B0B0; font-size: 0.9rem;">Sua presença já é o maior presente, mas se deseja me presentear, aqui vão algumas ideias.</p>
+            <div class="gifts-masonry">
+                <div class="gift-card">
+                    <div class="gift-icon"><i class="fas fa-book"></i></div>
+                    <div class="gift-title">Livros de Fantasia</div>
+                    <div class="gift-desc">Edições especiais de Harry Potter, Senhor dos Anéis, Nárnia ou Percy Jackson. Qualquer livro de fantasia será bem-vindo!</div>
+                    <a class="gift-link" href="https://www.amazon.com.br/s?k=livros+fantasia+mais+vendidos" target="_blank">Ver livros <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="gift-card">
+                    <div class="gift-icon"><i class="fas fa-scissors"></i></div>
+                    <div class="gift-title">Material de Artesanato</div>
+                    <div class="gift-desc">Miçangas, linhas, feltro, EVA, cola quente, tesouras, agulhas, fitas, botões e muito mais para criar peças incríveis!</div>
+                    <a class="gift-link" href="https://shopee.com.br/search?keyword=material%20artesanato%20kit" target="_blank">Ver na Shopee <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="gift-card">
+                    <div class="gift-icon"><i class="fas fa-couch"></i></div>
+                    <div class="gift-title">Decoração</div>
+                    <div class="gift-desc">Velas aromáticas, quadros, vasos, itens decorativos para casa. Design minimalista e acessível.</div>
+                    <a class="gift-link" href="https://www.shopee.com.br/search?keyword=decora%C3%A7%C3%A3o%20casa%20barata" target="_blank">Ver decoração <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="gift-card">
+                    <div class="gift-icon"><i class="fas fa-ticket-alt"></i></div>
+                    <div class="gift-title">Experiências</div>
+                    <div class="gift-desc">Ingressos para shows, peças de teatro, museus ou vouchers gastronômicos para curtirmos juntos!</div>
+                    <a class="gift-link" href="https://www.sympla.com.br/" target="_blank">Ver experiências <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="gift-card">
+                    <div class="gift-icon"><i class="fas fa-gem"></i></div>
+                    <div class="gift-title">Bijuterias</div>
+                    <div class="gift-desc">Anéis, brincos, colares, pulseiras. Vários estilos: delicados, modernos, folheados. Escolha o que mais combinar!</div>
+                    <a class="gift-link" href="https://shopee.com.br/search?keyword=bijuterias%20femininas%20conjunto" target="_blank">Ver bijuterias na Shopee <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="gift-card">
+                    <div class="gift-icon"><i class="fas fa-fill-drip"></i></div>
+                    <div class="gift-title">Maquiagem</div>
+                    <div class="gift-desc">Bases, corretivos, paletas de sombras, batons, pincéis. Kits completos ou itens avulsos - você escolhe!</div>
+                    <a class="gift-link" href="https://shopee.com.br/search?keyword=maquiagem%20kit%20completo" target="_blank">Ver maquiagem na Shopee <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-brand">FESTA DA RAQUEL • 03.10.2026 <span>18</span></div>
+        <div class="social-links">
+            <a href="#" id="socialInstagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" id="socialWhatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" id="socialEmail" target="_blank"><i class="far fa-envelope"></i></a>
+        </div>
+        <p style="margin-top: 25px; font-size: 0.7rem; color: #5A5A5A;">Todos os direitos reservados — Celebração inesquecível</p>
+    </div>
+</footer>
+
+<script>
+    (function() {
+        // Contagem regressiva
+        function atualizarContador() {
+            const dataAlvo = new Date(2026, 9, 3, 19, 0, 0);
+            const agora = new Date();
+            const diferenca = dataAlvo - agora;
+            
+            if (diferenca > 0) {
+                const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+                const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+                
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                const secondsEl = document.getElementById('seconds');
+                
+                if (daysEl) daysEl.innerHTML = dias.toString().padStart(2, '0');
+                if (hoursEl) hoursEl.innerHTML = horas.toString().padStart(2, '0');
+                if (minutesEl) minutesEl.innerHTML = minutos.toString().padStart(2, '0');
+                if (secondsEl) secondsEl.innerHTML = segundos.toString().padStart(2, '0');
+            } else {
+                const daysEl = document.getElementById('days');
+                if (daysEl) daysEl.innerHTML = '00';
+                const hoursEl = document.getElementById('hours');
+                if (hoursEl) hoursEl.innerHTML = '00';
+                const minutesEl = document.getElementById('minutes');
+                if (minutesEl) minutesEl.innerHTML = '00';
+                const secondsEl = document.getElementById('seconds');
+                if (secondsEl) secondsEl.innerHTML = '00';
+            }
+        }
+        
+        atualizarContador();
+        setInterval(atualizarContador, 1000);
+
+        // EmailJS
+        emailjs.init("Zgn-dfUP9rBC3-ogG");
+
+        const form = document.getElementById('presenceForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const alertContainer = document.getElementById('dressCodeAlertContainer');
+
+        function showToast(message, isError = false) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-message';
+            toast.style.background = isError ? '#8B0000' : '#9E2A2F';
+            toast.innerHTML = (isError ? '❌ ' : '✓ ') + message;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 5000);
+        }
+
+        function showDressCodeAlert(guestName) {
+            const existingAlert = document.querySelector('.dress-code-alert');
+            if (existingAlert) existingAlert.remove();
+            
+            const alertDiv = document.createElement('div');
+            alertDiv.className = 'dress-code-alert';
+            alertDiv.innerHTML = `
+                <i class="fas fa-vest"></i>
+                <div class="dress-code-alert-content">
+                    <strong>⚠️ ATENÇÃO: DRESS CODE PRETO ⚠️</strong>
+                    <p>${guestName}, a entrada será permitida APENAS para convidados que estiverem com <strong>trajes esporte-fino na cor PRETA</strong>.<br>
+                    Evite cores claras, jeans desgastados e bermudas. Vamos manter a elegância da festa!</p>
+                </div>
+                <button class="close-alert" onclick="this.parentElement.remove()"><i class="fas fa-times"></i></button>
+            `;
+            
+            if (alertContainer) alertContainer.appendChild(alertDiv);
+            alertDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            setTimeout(() => {
+                if (alertDiv && alertDiv.parentElement) alertDiv.remove();
+            }, 10000);
+        }
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const nome = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const telefone = document.getElementById('phone').value.trim();
+                const acompanhantes = document.getElementById('guests').value;
+                const mensagem = document.getElementById('message').value.trim();
+                
+                if (!nome || !email || !acompanhantes) {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                    return;
+                }
+                
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    const originalText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = 'ENVIANDO... <span class="loading-spinner"></span>';
+                    
+                    const templateParams = {
+                        nome: nome,
+                        email: email,
+                        telefone: telefone || 'Não informado',
+                        acompanhantes: acompanhantes,
+                        mensagem: mensagem || 'Nenhuma mensagem informada.',
+                        data: new Date().toLocaleString('pt-BR')
+                    };
+                    
+                    try {
+                        const response = await emailjs.send('service_07vboqd', 'template_6oslcnc', templateParams);
+                        console.log('Sucesso!', response);
+                        
+                        showDressCodeAlert(nome.toUpperCase());
+                        showToast(`✓ Presença confirmada, ${nome}! O e-mail foi enviado para a organizadora.`);
+                        
+                        form.reset();
+                        localStorage.setItem('presenceConfirmed', 'true');
+                        localStorage.setItem('guestName', nome);
+                        
+                    } catch (error) {
+                        console.error('Erro ao enviar:', error);
+                        showToast('Erro ao enviar confirmação. Tente novamente.', true);
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                    }
+                }
+            });
+        }
+
+        // Navegação suave
+        document.querySelectorAll('.nav-links a, .cta-button').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Recuperar confirmação anterior
+        if (localStorage.getItem('presenceConfirmed') === 'true') {
+            const storedName = localStorage.getItem('guestName');
+            if (storedName) {
+                setTimeout(() => {
+                    showDressCodeAlert(storedName.toUpperCase());
+                }, 500);
+            }
+        }
+        
+        // Redes Sociais
+        const socialInstagram = document.getElementById('socialInstagram');
+        const socialWhatsapp = document.getElementById('socialWhatsapp');
+        const socialEmail = document.getElementById('socialEmail');
+        
+        if (socialInstagram) socialInstagram.href = 'https://www.instagram.com/raquel_carajas02';
+        if (socialWhatsapp) socialWhatsapp.href = 'https://wa.me/5521965209074';
+        if (socialEmail) socialEmail.href = 'mailto:raquelcarajas02@gmail.com';
+    })();
+</script>
+</body>
+</html>
